@@ -1,3 +1,6 @@
+import { NavLink } from "react-router-dom";
+
+
 import "./PetsListNav.css";
 
 export const PetsListNav = ({ cats, dogs }) => {
@@ -5,10 +8,10 @@ export const PetsListNav = ({ cats, dogs }) => {
     <nav className="pets-nav">
       <ul>
         <li>
-          <a href="/pets/cats">See All Cats ({cats.length})</a>
+          <NavLink to="/pets/cats">See All Cats ({cats.length})</NavLink>
         </li>
         <li>
-          <a href="/pets/dogs">See All Dogs ({dogs.length})</a>
+          <NavLink to="/pets/dogs">See All Dogs ({dogs.length})</NavLink>
         </li>
       </ul>
     </nav>
