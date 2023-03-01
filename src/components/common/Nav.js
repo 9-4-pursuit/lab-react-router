@@ -21,7 +21,7 @@ function Nav() {
           </li>
 
           <li>
-            <NavLink to="/pets/cats">All Pets</NavLink>
+            <NavLink to="/pets">All Pets</NavLink>
           </li>
 
         </ul>

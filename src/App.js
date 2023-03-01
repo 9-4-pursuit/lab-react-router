@@ -39,6 +39,7 @@ function App() {
           element={<StaffList employees={employees} />} />
 
         <Route path="/pets">
+          <Route index element={<PetsList pets={pets}/>}/>
           <Route path="cats"
             element={<PetsList pets={pets} petType={"cat"}/>} />
           <Route path="dogs"
