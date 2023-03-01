@@ -1,11 +1,14 @@
 import "./Pet.css";
+//import { useParams } from "react-router-dom";
 
 const iconMap = {
   cat: "🐈",
   dog: "🐕",
 };
 
-export const Pet = ({ kind, pet }) => {
+export const Pet = ({ pet, kind }) => {
+  //let { kind } = useParams();
+
   const icon = iconMap[kind];
   return (
     <article key={pet.id}>
