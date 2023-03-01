@@ -1,4 +1,5 @@
 import "./Pet.css";
+import { useParams } from "react-router-dom";
 
 const iconMap = {
   cat: "🐈",
@@ -6,6 +7,8 @@ const iconMap = {
 };
 
 export const Pet = ({ kind, pet }) => {
+  // let { kind } = useParams()
+
   const icon = iconMap[kind];
   return (
     <article key={pet.id}>
