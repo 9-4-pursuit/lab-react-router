@@ -1,3 +1,4 @@
+
 import "./Pet.css";
 
 const iconMap = {
@@ -6,7 +7,11 @@ const iconMap = {
 };
 
 export const Pet = ({ kind, pet }) => {
+
+
   const icon = iconMap[kind];
+  
+ 
   return (
     <article key={pet.id}>
       <h3>
