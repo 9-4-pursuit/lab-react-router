@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Route, Routes, Navigate } from "react-router-dom";
 /*
   Components
 */
@@ -23,12 +23,19 @@ function App() {
   const [owners] = useState(ownerData);
   const [pets] = useState(petData);
 
+
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Home employees={employees} owners={owners} pets={pets} />}
+        />
+        <Route path="/staff" element={<StaffList employees={employees} />} />
+        <Route path="/pets" element={<Navigate replace to="cats" pets={pets}/>} />
+        <Route path="/pets/:id" element={<PetsList pets={pets} />} />
+      </Routes>
       <Footer />
     </div>
   );
