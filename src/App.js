@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 
 /*
   Components
@@ -8,6 +9,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import NotFound from "./components/NotFound/NotFound.jsx";
 
 /*
   Data
@@ -26,9 +28,29 @@ function App() {
   return (
     <div className="wrapper">
       <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
+
+      <Routes>
+
+        <Route 
+          path="/"
+          element={<Home employees={employees} owners={owners} pets={pets} />} />
+
+        <Route 
+          path="/staff" 
+          element={<StaffList employees={employees} />} />
+
+        <Route path="/pets">
+          <Route index element={<PetsList pets={pets}/>}/>
+          <Route path="cats"
+            element={<PetsList pets={pets} petType={"cat"}/>} />
+          <Route path="dogs"
+            element={<PetsList pets={pets} petType={"dog"}/>} />
+            <Route path="/birds" element={NotFound} />
+            <Route element={NotFound} />
+        </Route>
+        
+      </Routes>
+
       <Footer />
     </div>
   );

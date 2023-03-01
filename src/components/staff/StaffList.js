@@ -1,6 +1,6 @@
 import Staffer from "./Staffer";
 import "./StaffList.css";
-
+import {Link} from "react-router-dom";
 export const StaffList = ({ employees }) => {
   const staff = employees.map((employee) => (
     <Staffer key={employee.id} employee={employee} />
