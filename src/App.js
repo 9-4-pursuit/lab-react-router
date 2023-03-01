@@ -9,7 +9,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
-import NotFound from "./components/NotFound/NotFound.jsx";
+// import NotFound from "./components/NotFound/NotFound.jsx";
 
 /*
   Data
@@ -45,8 +45,8 @@ function App() {
             element={<PetsList pets={pets} petType={"cat"}/>} />
           <Route path="dogs"
             element={<PetsList pets={pets} petType={"dog"}/>} />
-            <Route path="/birds" element={NotFound} />
-            <Route element={NotFound} />
+            {/* <Route path="/birds" element={NotFound} />
+            <Route element={NotFound} /> */}
         </Route>
         
       </Routes>
