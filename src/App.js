@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useParams, Route, Routes, Link, useNavigation, Navigate } from "react-router-dom"
+
 
 /*
   Components
@@ -23,13 +25,26 @@ function App() {
   const [owners] = useState(ownerData);
   const [pets] = useState(petData);
 
+  const { id } = useParams();
+
+          // <Route path="/pets" element={<PetsList pets={pets} />} />
+          // <Route path="/pets" element={<Navigate replace to="cats"/>} />
+
   return (
     <div className="wrapper">
       <Nav />
+      <Routes>
+        <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />}/>
+        <Route path="/staff" element={<StaffList employees={employees} />} />
+        <Route path="/pets" element={<Navigate replace to="cats"/>} />
+        <Route path="/pets/:id" element={<PetsList pets={pets} />} />
+      </Routes>
+      <Footer />
+      {/* 
       <Home employees={employees} owners={owners} pets={pets} />
       <StaffList employees={employees} />
       <PetsList pets={pets} />
-      <Footer />
+      */}
     </div>
   );
 }
