@@ -45,7 +45,7 @@ function App() {
 
           <Route
             path="/pets"
-            element={<Navigate replace to="cats" pets={pets} />}
+            element={<Navigate to="/pets/cats" pets={pets} />}
           />
 
           <Route path="/pets/:kind" element={<PetsList pets={pets} />} />
