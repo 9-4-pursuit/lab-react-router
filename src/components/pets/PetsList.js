@@ -8,7 +8,11 @@ export const PetsList = ({ pets }) => {
   let { id } = useParams()
   console.log(id)
   useEffect(() => {
-    if (!id) navigate('/pets/cats')
+    if (!id) {
+      navigate('/pets/cats')
+    } else if (id !== 'cats' && id !== 'dogs' && id) {
+      navigate('/error')
+    }
   })
 
   const [cats, dogs] = pets.reduce(
