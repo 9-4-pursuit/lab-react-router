@@ -31,9 +31,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />} />
           <Route path="/staff" element={<StaffList employees={employees} />} />
-          <Route path="/pets" element={<Navigate to="/pets/cats" />} />
-          <Route path="/pets/cats" element={<PetsList pets={pets} kind={"cat"} />} />
-          <Route path="/pets/dogs" element={<PetsList pets={pets} kind={"dog"} />} />
+          <Route path="/pets" element={<Navigate to="cats" />} />
+          <Route path="/pets/:kind" element={<PetsList pets={pets} />} />
         </Routes>
       </main>
       <Footer />
