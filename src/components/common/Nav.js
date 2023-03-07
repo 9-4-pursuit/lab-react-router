@@ -18,7 +18,7 @@ function Nav() {
             <NavLink to="/staff">All Staff</NavLink>
           </li>
           <li>
-            <NavLink to="/pets">All Pets</a>
+            <NavLink to="/pets">All Pets</NavLink>
           </li>
         </ul>
       </aside>
