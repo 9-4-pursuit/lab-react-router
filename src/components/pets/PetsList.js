@@ -1,6 +1,7 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
+import {useNavigate} from "react-router-dom";
 
 export const PetsList = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
