@@ -15,10 +15,10 @@ function Nav() {
       <aside>
         <ul>
           <li>
-            <NavLink to="/staff">All Staff</a>
+            <NavLink to="/staff">All Staff</NavLink>
           </li>
           <li>
-            <a href="/pets">All Pets</a>
+            <NavLink to="/pets">All Pets</a>
           </li>
         </ul>
       </aside>
