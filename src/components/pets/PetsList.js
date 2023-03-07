@@ -1,11 +1,10 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export const PetsList = ({ pets }) => {
-
   let navigate = useNavigate();
 
   const [cats, dogs] = pets.reduce(
@@ -19,22 +18,20 @@ export const PetsList = ({ pets }) => {
 
   useEffect(() => {
     if (!petType) {
-      navigate ("/pets/cats")
+      navigate("/pets/cats");
     }
-  })
+  });
+
+  function catDog() {
+    return petType === "cat" ? cats : dogs;
+  }
 
   return (
     <section className="pets-wrapper">
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
-        {/* All cats section */}
-        {cats.map((cat) => (
-          <Pet key={cat.id} kind="cat" pet={cat} />
-        ))}
-
-        {/* All dogs section */}
-        {dogs.map((dog) => (
-          <Pet key={dog.id} kind="dog" pet={dog} />
+        {catOrDog().map((pet) => (
+          <Pet key={pet.id} kind={pet.kind.toLowerCase()} pet={pet} />
         ))}
       </section>
     </section>
