@@ -1,22 +1,19 @@
 import { useState } from "react";
+import {Route,Routes} from "react-router-dom"
 
-/*
-  Components
-*/
+// Comp section
+import Home from "./components/home/Home";
 import Nav from "./components/common/Nav";
 import Footer from "./components/common/Footer";
-import Home from "./components/home/Home";
-import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import StaffList from "./components/staff/StaffList";
 
-/*
-  Data
-  ---------------
-  Note: Normally this data would be pulled from an API. It is not necessary, however, for this application.
-*/
-import { employeeData } from "./data/employees.js";
-import { ownerData } from "./data/owners";
-import { petData } from "./data/pets";
+// Data section
+// Note: this data is pulled from an API in most cases
+import {petData} from "./data/pets";
+import {ownerData} from "./data/owners";
+import {employeeData} from "./data/employees.js";
+
 
 function App() {
   const [employees] = useState(employeeData);
