@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom"; //added
 
 /*
   Components
@@ -17,6 +18,7 @@ import PetsList from "./components/pets/PetsList";
 import { employeeData } from "./data/employees.js";
 import { ownerData } from "./data/owners";
 import { petData } from "./data/pets";
+//import Staffer from "./components/staff/Staffer";
 
 function App() {
   const [employees] = useState(employeeData);
@@ -29,6 +31,20 @@ function App() {
       <Home employees={employees} owners={owners} pets={pets} />
       <StaffList employees={employees} />
       <PetsList pets={pets} />
+      {/* <Routes>
+        <Route 
+          path="/" 
+          element={<Home employees={employees} owners={owners} pets={pets} />} 
+          />
+        <Route 
+          path="/staffList" 
+          element={<StaffList employees={employees} /> } 
+          />
+        <Route 
+          path="/petsList" 
+          element={ <PetsList pets={pets} />} 
+          />
+      </Routes> */}
       <Footer />
     </div>
   );
