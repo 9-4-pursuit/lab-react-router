@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router-dom"; //added
+import { useState, Redirect} from "react";
+import  { BrowserRouter as Router, Route, Routes } from "react-router-dom" //added
 
 /*
   Components
@@ -18,36 +18,59 @@ import PetsList from "./components/pets/PetsList";
 import { employeeData } from "./data/employees.js";
 import { ownerData } from "./data/owners";
 import { petData } from "./data/pets";
-//import Staffer from "./components/staff/Staffer";
+  // eslint-disable-next-line 
+import Staffer from "./components/staff/Staffer";
+
 
 function App() {
   const [employees] = useState(employeeData);
   const [owners] = useState(ownerData);
   const [pets] = useState(petData);
 
+
+
   return (
-    <div className="wrapper">
-      <Nav />
-      <Home employees={employees} owners={owners} pets={pets} />
-      <StaffList employees={employees} />
-      <PetsList pets={pets} />
-      {/* <Routes>
-        <Route 
-          path="/" 
-          element={<Home employees={employees} owners={owners} pets={pets} />} 
-          />
-        <Route 
-          path="/staffList" 
-          element={<StaffList employees={employees} /> } 
-          />
-        <Route 
-          path="/petsList" 
-          element={ <PetsList pets={pets} />} 
-          />
-      </Routes> */}
+    <div className="App">
+      <Router>
+        <div className="wrapper">
+          <Nav />
+
+          <main>
+            <Routes>
+              <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />}/>
+              <Route path="/staff" element={<StaffList employees={employees} />} />
+
+              <Route exact path="/pets" element={<Redirect to="/pets/cats" />}/>
+              <Route path="/pets/:kind" element={<PetsList pets={pets} />} />
+
+
+            </Routes>
+          </main> 
+   
+        </div>
       <Footer />
+    </Router>
     </div>
   );
 }
 
 export default App;
+
+//Another option?
+//EYE was missing the following part, with the mapping
+
+// let dogArr = []
+// let catArr = []
+
+// <Route path="/pets/cats" element={<PetsList pets={catArr} />}/>
+// <Route path="/pets/dogs" element={<PetsList pets={dogArr} />}/>
+
+// pets.map((pet) => {
+//   if(pet.kind === "Dog"){
+//     dogArr.push(pet)
+//   } else {
+//     catArr.push(pet)
+//   }
+// })
+
+
