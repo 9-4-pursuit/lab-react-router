@@ -39,8 +39,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home employees={employees} owners={owners} pets={pets} />}/>
               <Route path="/staff" element={<StaffList employees={employees} />} />
-
-              <Route exact path="/pets" element={<Redirect to="/pets/cats" />}/>
+              <Route path='/pets/cats' element={<PetsList pets={pets} />} />
+              {/* <Route path="/pets" element={<Redirect to="/pets/cats" />}/> */}
               <Route path="/pets/:kind" element={<PetsList pets={pets} />} />
 
 
