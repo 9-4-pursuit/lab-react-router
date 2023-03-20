@@ -1,26 +1,39 @@
 import "./Nav.css";
+import { NavLink } from "react-router-dom";
+
+
+//since this is the Nav bar we change links to NavLinks. NavLinks have more component props, including whether or not they are active.
 
 function Nav() {
   return (
+  <nav>
     <header>
+      
       <article>
         <h1>
-          <a href="/">
+          <NavLink to="/">
             Northwest <span>Animal Hospital</span>
-          </a>
+            </NavLink>
         </h1>
       </article>
       <aside>
         <ul>
-          <li>
-            <a href="/staff">All Staff</a>
-          </li>
-          <li>
-            <a href="/pets">All Pets</a>
-          </li>
+            {/* <a href="/staff">All Staff</a> */}
+            <NavLink to="/staff" >
+              <li>All Staff</li>
+            </NavLink>
+
+
+            {/* <a href="/pets">All Pets</a> */}
+            <NavLink to="/pets">
+              <li>All Pets</li>
+            </NavLink>
+
         </ul>
       </aside>
+
     </header>
+    </nav>
   );
 }
 
