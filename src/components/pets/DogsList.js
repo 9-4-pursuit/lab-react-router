@@ -1,9 +1,9 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
-import { Link } from "react-router-dom";
 
-export const PetsList = ({ pets }) => {
+
+export const DogsList = ({ pets }) => {
   const [cats, dogs] = pets.reduce(
     (acc, pet) => {
       const position = pet.kind === "Cat" ? 0 : 1;
@@ -18,9 +18,9 @@ export const PetsList = ({ pets }) => {
       <PetsListNav cats={cats} dogs={dogs} />
       <section className="pets-list">
         {/* All cats section */}
-        {cats.map((cat) => (
+        {/* {cats.map((cat) => (
           <Pet key={cat.id} kind="cat" pet={cat} />
-        ))}
+        ))} */}
 
         {/* All dogs section */}
         {dogs.map((dog) => (
@@ -31,4 +31,4 @@ export const PetsList = ({ pets }) => {
   );
 };
 
-export default PetsList;
+export default DogsList;
