@@ -1,8 +1,16 @@
 import PetsListNav from "./PetsListNav";
 import Pet from "./Pet";
 import "./PetsList.css";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
 export const PetsList = ({ pets }) => {
+
+
+
+
+
+  
   const [cats, dogs] = pets.reduce(
     (acc, pet) => {
       const position = pet.kind === "Cat" ? 0 : 1;

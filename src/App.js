@@ -8,6 +8,7 @@ import Footer from "./components/common/Footer";
 import Home from "./components/home/Home";
 import StaffList from "./components/staff/StaffList";
 import PetsList from "./components/pets/PetsList";
+import ErrorHandling from "./components/common/ErrorPage";
 import { Routes, Route } from "react-router-dom";
 
 /*
@@ -35,7 +36,9 @@ function App() {
         />
         <Route path="/staff" element={<StaffList employees={employees} />} />
         <Route path="/pets" element={<PetsList pets={pets} />} />
+        <Route path="/pets/:kind" element={<PetsList pets={pets} />} />
         <Route path="/footer" element={<Footer />} />
+        <Route path="/error" element={<ErrorHandling />} />
       </Routes>
     </div>
   );
