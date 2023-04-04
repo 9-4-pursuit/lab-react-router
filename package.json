@@ -39,6 +39,6 @@
   "devDependencies": {
     "cypress": "^9.7.0",
     "cypress-react-selector": "^2.3.16",
-    "cypress-watch-and-reload": "^1.7.4"
+    "cypress-watch-and-reload": "^1.10.5"
   }
 }
